@@ -1,0 +1,51 @@
+package com.example.stringapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText edtMetinBir;
+    EditText edtMetinİki;
+
+    TextView birlesik;
+
+    Button btnMetinBirlestir;
+
+    String tutucu1;
+    String tutucu2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) { //on create: ilk oluşturulduğunda
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        edtMetinBir=findViewById(R.id.edt_metin_bir);
+        edtMetinİki=findViewById(R.id.edt_metin_iki);
+
+
+
+        birlesik=findViewById(R.id.txt_birlesik);
+
+        btnMetinBirlestir=findViewById(R.id.btn_metinbirlestirme);
+        btnMetinBirlestir.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                tutucu1=edtMetinBir.getText().toString();
+                tutucu2=edtMetinİki.getText().toString();
+
+                birlesik.setText(tutucu1+" "+tutucu2);
+                btnMetinBirlestir.setText(tutucu1+" "+tutucu2);
+
+
+            }
+        });
+    }
+}
