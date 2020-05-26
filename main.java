@@ -1,0 +1,116 @@
+package com.example.hesapmakinesi;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+
+    EditText sayi1;
+    EditText sayi2;
+
+    TextView sonuc;
+
+    Button toplama;
+    Button cikarma;
+    Button carpma;
+    Button bolme;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        sayi1=findViewById(R.id.edt_sayibir);
+        sayi2=findViewById(R.id.edt_sayiiki);
+
+        sonuc=findViewById(R.id.txt_sonuc);
+
+        toplama=findViewById(R.id.btn_topla);
+        cikarma=findViewById(R.id.btn_cikar);
+        carpma=findViewById(R.id.btn_carp);
+        bolme=findViewById(R.id.btn_bol);
+
+
+        toplama.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Integer ilksayi;
+                Integer digersayi;
+                Integer toplam;
+
+
+                ilksayi= Integer.parseInt(sayi1.getText().toString());
+                digersayi= Integer.parseInt(sayi2.getText().toString());
+
+                toplam= ilksayi+digersayi;
+
+
+                sonuc.setText("= "+toplam.toString()); //sayıyı stringe çevir
+
+            }
+
+        });
+
+        cikarma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Integer ilksayi;
+                Integer digersayi;
+                Integer fark;
+
+                ilksayi= Integer.parseInt(sayi1.getText().toString());
+                digersayi= Integer.parseInt(sayi2.getText().toString());
+
+                fark = ilksayi-digersayi;
+
+                sonuc.setText("= "+fark.toString());
+
+            }
+        });
+
+
+        carpma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Integer ilksayi;
+                Integer digersayi;
+                Integer carpim;
+
+                ilksayi= Integer.parseInt(sayi1.getText().toString());
+                digersayi= Integer.parseInt(sayi2.getText().toString());
+
+                carpim = ilksayi*digersayi;
+
+                sonuc.setText("= "+carpim.toString());
+            }
+        });
+
+        bolme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Double ilksayi= Double.parseDouble(sayi1.getText().toString());
+                Double digersayi= Double.parseDouble(sayi2.getText().toString());
+
+                Double bolum =ilksayi/digersayi;
+
+                sonuc.setText("= "+bolum.toString());
+
+
+            }
+        });
+
+
+
+    }
+}
