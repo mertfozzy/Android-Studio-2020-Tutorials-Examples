@@ -1,0 +1,37 @@
+package com.example.toastmesaj;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btnMesajGoster;
+    EditText edtadsoyad;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnMesajGoster = findViewById(R.id.btn_mesaj_goster);
+
+        edtadsoyad = findViewById(R.id.edt_ad_soyad);
+
+        btnMesajGoster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String adSoyadTutucu = edtadsoyad.getText().toString();
+
+                Toast.makeText(MainActivity.this, "Merhaba " + adSoyadTutucu + " canım", Toast.LENGTH_LONG).show();
+
+
+            }
+        });
+    }
+}
