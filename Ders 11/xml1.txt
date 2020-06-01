@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#29632F"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_ad_alani"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="Ad girin :"
+        android:textColor="#F3F3F3"
+        android:textSize="28sp"
+        />
+    <EditText
+        android:textSize="28sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/edt_soyad_alani"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#F3F3F3"
+        android:hint="Soyad girin :"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_gonder"
+        android:text="Gönder"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:background="#823FE1"
+        android:textColor="#3CE404"
+        />
+
+</LinearLayout>
