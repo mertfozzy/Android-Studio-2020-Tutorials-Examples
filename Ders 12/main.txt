@@ -1,0 +1,63 @@
+package com.example.ifpart1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText edtVize, edtFinal;
+
+    TextView txtSonuc;
+
+    Button btnSonuc;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        edtVize=findViewById(R.id.edt_vize);
+        edtFinal=findViewById(R.id.edt_final);
+
+        txtSonuc=findViewById(R.id.txt_sonuc);
+
+        btnSonuc=findViewById(R.id.btn_sonuc);
+
+        btnSonuc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Double vize = Double.parseDouble(edtVize.getText().toString());
+                Double finall = Double.parseDouble(edtFinal.getText().toString());
+
+                Double sonuc=(vize*0.4 + finall*0.6);
+
+                if (sonuc<45)
+                {
+                    txtSonuc.setTextColor(Color.RED);
+                    txtSonuc.setText("Sonuç: "+sonuc.toString()+"\n"+"..malesef kaldınız..");
+                }
+                else if (sonuc==45)
+                {
+                    txtSonuc.setTextColor(Color.YELLOW);
+                    txtSonuc.setText("Sonuç: "+sonuc.toString()+"\n"+"..sınırda geçtiniz..");
+                }
+                else
+                {
+                    txtSonuc.setTextColor(Color.GREEN);
+                    txtSonuc.setText("Sonuç: "+sonuc.toString()+"\n"+"..başarıyla geçtiniz..");
+                }
+
+
+            }
+        });
+
+
+    }
+}
