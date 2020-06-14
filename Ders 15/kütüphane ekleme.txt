@@ -1,0 +1,8 @@
+Kütüphane eklemek için:
+
+- gerekli kütüphanenin gradle kodunu bul
+-Gradle Scripts > build.gradle (module app) içerisine gir
+-orada dependencies alanında alta yapıştır
+-sağ üstte çıkan "Sync now" kısmına tıkla
+
+https://github.com/hdodenhof/CircleImageView
