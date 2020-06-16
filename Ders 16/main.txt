@@ -1,0 +1,44 @@
+package com.example.gorunurlukayarlar;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btnGorunur, btnGorunmez;
+    TextView txt;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        txt=findViewById(R.id.textView);
+        btnGorunmez=findViewById(R.id.btn_gorunmez);
+        btnGorunur=findViewById(R.id.btn_gorunur);
+        //------------------------------------------------------------------
+        btnGorunmez.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                txt.setVisibility(View.INVISIBLE);
+
+            }
+        });
+        //--------------------------------------------------------------------
+        btnGorunur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                txt.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        //--------------------------------------------------------------------
+    }
+}
