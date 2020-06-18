@@ -1,0 +1,56 @@
+package com.example.alertdialog;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btnUyari;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnUyari=findViewById(R.id.btn_uyari_penceresi);
+
+        btnUyari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder uyariPenceresi = new AlertDialog.Builder(MainActivity.this);
+                uyariPenceresi.setTitle("Onay Durumu"); //baslik
+                uyariPenceresi.setMessage("Uygun seçeneği seçiniz."); //mesaj
+
+
+                //----------------------------------------------------------------------------------
+                uyariPenceresi.setPositiveButton("Onayla", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this,"Onay verdiniz teşekkürler..",Toast.LENGTH_LONG).show();
+                    }
+                });
+                //----------------------------------------------------------------------------------
+                uyariPenceresi.setNegativeButton("Reddet", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "Redettiniz, işlem yok.", Toast.LENGTH_LONG).show();
+
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                uyariPenceresi.show(); //Goster
+
+
+            }
+        });
+
+    }
+}
